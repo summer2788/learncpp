@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/parkjong-eun/ParkJongeun/c++/chapter15_3'
+relocations:
+  - { offsetInCU: 0x2B, offset: 0x2B, size: 0x8, addend: 0x0, symName: __Z10generateIDv, symObjAddr: 0x0, symBinAddr: 0x100003980, symSize: 0x14 }
+  - { offsetInCU: 0x4A, offset: 0x4A, size: 0x8, addend: 0x0, symName: __ZZ10generateIDvE4s_id, symObjAddr: 0x15F28, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x2F3F, offset: 0x2F3F, size: 0x8, addend: 0x0, symName: __ZNSt3__124__put_character_sequenceB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m, symObjAddr: 0xBC, symBinAddr: 0x100003A3C, symSize: 0x164 }
+  - { offsetInCU: 0x4FC3, offset: 0x4FC3, size: 0x8, addend: 0x0, symName: __ZNSt3__116__pad_and_outputB7v160006IcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_, symObjAddr: 0x220, symBinAddr: 0x100003BA0, symSize: 0x194 }
+  - { offsetInCU: 0x587A, offset: 0x587A, size: 0x8, addend: 0x0, symName: __ZNSt3__120__throw_length_errorB7v160006EPKc, symObjAddr: 0x3D4, symBinAddr: 0x100003D54, symSize: 0x50 }
+  - { offsetInCU: 0x80F7, offset: 0x80F7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x14, symBinAddr: 0x100003994, symSize: 0xA8 }
+  - { offsetInCU: 0x86D6, offset: 0x86D6, size: 0x8, addend: 0x0, symName: __ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB7v160006Ev, symObjAddr: 0x3C0, symBinAddr: 0x100003D40, symSize: 0x14 }
+  - { offsetInCU: 0x8700, offset: 0x8700, size: 0x8, addend: 0x0, symName: __ZNSt3__120__throw_length_errorB7v160006EPKc, symObjAddr: 0x3D4, symBinAddr: 0x100003D54, symSize: 0x50 }
+  - { offsetInCU: 0x870B, offset: 0x870B, size: 0x8, addend: 0x0, symName: __ZNSt12length_errorC1B7v160006EPKc, symObjAddr: 0x424, symBinAddr: 0x100003DA4, symSize: 0x24 }
+...
