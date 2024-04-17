@@ -68,7 +68,9 @@
         "set": "cpp",
         "span": "cpp",
         "unordered_set": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "cinttypes": "cpp",
+        "execution": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++",
 }
