@@ -1,13 +1,15 @@
 #include <iostream>
 #include <vector>
 #include "Random.h"
+#include <algorithm>
 #include <cmath>
 
 std::vector<int> nums;
 
 int main()
 {
-    using std::cout, std::cin;
+    using std::cin;
+    using std::cout;
     int start, num;
     int multiplier[2] = {2, 4};
 
