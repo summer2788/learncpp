@@ -1,27 +1,66 @@
-// #include <iostream>
-// #include <functional> // includes std::reference_wrapper and std::ref
+#include <algorithm> // for std::max and std::copy_n
+#include <iostream>
 
-// void myInvoke(const std::function<void()> fn)
-// {
-//     fn();
-// }
+class MyString
+{
+private:
+    char *m_data{};
+    int m_length{};
 
-// int main()
-// {
-//     int i{0};
+public:
+    MyString(const char *data = nullptr, int length = 0)
+        : m_length{std::max(length, 0)}
+    {
+        if (length)
+        {
+            m_data = new char[static_cast<std::size_t>(length)];
+            std::copy_n(data, length, m_data); // copy length elements of data into m_data
+        }
+    }
+    ~MyString()
+    {
+        delete[] m_data;
+    }
 
-//     // Increments and prints its local copy of @i.
-//     auto count{[i]() mutable
-//                {
-//                    std::cout << ++i << '\n';
-//                }};
+    MyString(const MyString &) = default; // some compilers (gcc) warn if you have pointer members but no declared copy constructor
 
-//     // std::ref(count) ensures count is treated like a reference
-//     // thus, anything that tries to copy count will actually copy the reference
-//     // ensuring that only one count exists
-//     myInvoke(std::ref(count));
-//     myInvoke(std::ref(count));
-//     myInvoke(std::ref(count));
+    // Overloaded assignment
+    MyString &operator=(const MyString &str);
 
-//     return 0;
-// }
+    friend std::ostream &operator<<(std::ostream &out, const MyString &s);
+};
+
+std::ostream &operator<<(std::ostream &out, const MyString &s)
+{
+    out << s.m_data;
+    return out;
+}
+
+// A simplistic implementation of operator= (do not use)
+MyString &MyString::operator=(const MyString &str)
+{
+    // if data exists in the current string, delete it
+    if (m_data)
+        delete[] m_data;
+
+    m_length = str.m_length;
+    m_data = nullptr;
+
+    // allocate a new array of the appropriate length
+    if (m_length)
+        m_data = new char[static_cast<std::size_t>(str.m_length)];
+
+    std::copy_n(str.m_data, m_length, m_data); // copies m_length elements of str.m_data into m_data
+
+    // return the existing object so we can chain this operator
+    return *this;
+}
+
+int main()
+{
+    MyString alex{"Alex", 5}; // Meet Alex
+    alex = alex;              // Alex is himself
+    std::cout << alex;        // Say your name, Alex
+
+    return 0;
+}
